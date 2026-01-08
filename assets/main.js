@@ -1,5 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById("reloadOverlay");
 
+    // Disable scroll while overlay is showing
+    document.body.style.overflow = "hidden";
+
+    // Small delay for nice effect
+    setTimeout(() => {
+      overlay.classList.add("fade-out");
+
+      // Re-enable scroll after transition
+      setTimeout(() => {
+        document.body.style.overflow = "auto";
+      }, 800); // match transition time
+    }, 1500); // how long overlay stays before fading
+  });
+
+// Reload animation end
+  
     // -------------------------
     // NAVBAR TOGGLE + SHRINK
     // -------------------------
@@ -27,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (scrollY > 100) {
         navbar.classList.add('shrink');
+        toggler.classList.add('pink'); // 👈 ADD THIS
 
         // Change nav links color to black
         navLinks.forEach(link => link.style.color = '#000');
@@ -35,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (logo) logo.src = 'assets/logo-dark.png'; // replace with your dark logo
       } else {
         navbar.classList.remove('shrink');
+        toggler.classList.add('pink'); // 👈 ADD THIS
 
         // Reset nav links color to white
         navLinks.forEach(link => link.style.color = '#fff');
@@ -93,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.3 });
   skillSections.forEach(section => skillsObserver.observe(section));
 
-});
+// });
 
 
 //experience
