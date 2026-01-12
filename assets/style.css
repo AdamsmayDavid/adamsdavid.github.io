@@ -67,6 +67,18 @@ a:hover {
   transition: all 0.5s ease-in-out;
 } */
 
+/* LOGO */
+.navbar .icon{
+ width: 40px !important;
+  color: #ff4d9d !important;
+}
+.navbar .name{
+ position: relative;
+ top: 10px;
+ font-weight:normal;
+ font-size: 16px;
+}
+
 /* Navbar */
 
 nav.bg-trans {
